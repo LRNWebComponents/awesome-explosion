@@ -9,14 +9,16 @@
 ```
 -->
 ```html
-<awesome-explosion></awesome-explosion>
+<awesome-explosion size="tiny"></awesome-explosion>
+<awesome-explosion size="large" color="red"></awesome-explosion>
+<awesome-explosion size="small" color="blue"></awesome-explosion>
 ```
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LRNWebComponents/awesome-explosion)
 
 # \<awesome-explosion\>
 
-A LRN element
+Creating a silly, awesome explosion tag which is to demonstrate different concepts of webcomponent / polymer development. This was produced in 1 hour and 45 minutes and you can watch the live stream and thought process that produced it here: https://youtu.be/6DeUFFwrYaw?t=48s
 
 ## Install the Polymer-CLI
 
