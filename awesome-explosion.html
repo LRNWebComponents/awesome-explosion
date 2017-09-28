@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`awesome-explosion`
+A LRN element
+
+@demo demo/index.html
+-->
+
+<dom-module id="awesome-explosion">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[title]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'awesome-explosion',
+
+      properties: {
+        title: {
+          type: String,
+          value: 'awesome-explosion',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
