@@ -10,6 +10,8 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../paper-button/paper-button.html">
+    <link rel="import" href="../../paper-toast/paper-toast.html">
     <link rel="import" href="../awesome-explosion.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
@@ -17,10 +19,43 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic awesome-explosion demo</h3>
+      <h3>A bunch of awesome-explosion tags</h3>
       <demo-snippet>
-        <template>
-          <awesome-explosion></awesome-explosion>
+        <template is="dom-bind">
+          <paper-toast id="toast"></paper-toast>
+          <div>
+            <paper-button id="play">Play</paper-button>
+            <paper-button id="pause">Pause</paper-button>
+            <paper-button id="stop">Stop</paper-button>
+          </div>
+
+          <awesome-explosion id="blowup" size="tiny" color="red"></awesome-explosion>
+          <awesome-explosion size="small" color="purple"></awesome-explosion>
+          <awesome-explosion size="medium" color="blue"></awesome-explosion>
+          <awesome-explosion size="large" color="yellow"></awesome-explosion>
+          <awesome-explosion size="epic" color="orange"></awesome-explosion>
+          <script>
+            // the explosion tag
+            const blowup = document.querySelector('#blowup');
+            // buttons here
+            const play = document.querySelector('#play');
+            const pause = document.querySelector('#pause');
+            const stop = document.querySelector('#stop');
+            // event handlers for the buttons
+            play.addEventListener('click', function(e) {
+              blowup.state = 'play';
+            });
+            pause.addEventListener('click', function(e) {
+              blowup.state = 'pause';
+            });
+            stop.addEventListener('click', function(e) {
+              blowup.state = 'stop';
+            });
+            // events coming from our tag
+            blowup.addEventListener('awesome-event', function(e) {
+              document.querySelector('#toast').show(e.detail.message);
+            });
+          </script>
         </template>
       </demo-snippet>
     </div>
